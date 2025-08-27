@@ -1,10 +1,10 @@
 import cv2
 from ultralytics import YOLO
 
-model_path = "runs/detect/treino_v1_otimizado/weights/best.pt"
+model_path = "runs/detect/treino_v1_continuacao/weights/best.pt"
 model = YOLO(model_path)
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 if not cap.isOpened():
     print("Erro: não foi possível acessar a webcam")
     exit()
