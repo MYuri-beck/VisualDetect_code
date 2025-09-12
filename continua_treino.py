@@ -3,11 +3,11 @@ from ultralytics import YOLO
 # ===== CONFIGURAÇÕES =====
 checkpoint = "runs/detect/treino_v1_otimizado/weights/best.pt"  # pesos base
 dataset_yaml = "data.yaml"          # seu arquivo YAML
-epochs = 200                        # novas épocas para continuar o treino
+epochs = 250                      # novas épocas para continuar o treino
 img_size = 640
 batch_size = 8
 device = "cuda"                      # GPU ou "cpu" se não tiver
-train_name = "treino_v1_continuacao" # nova pasta para não sobrescrever
+train_name = "treino_v2.1" # nova pasta para não sobrescrever
 augment = True
 workers = 0
 # ==========================

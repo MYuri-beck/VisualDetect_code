@@ -1,10 +1,11 @@
 import cv2
 from ultralytics import YOLO
 
-model_path = "runs/detect/treino_v1_continuacao/weights/best.pt"
+model_path = "C:/Users/Yuri/Desktop/VisualDetect_code/runs/detect/treino_v2.1/weights/best.pt"
 model = YOLO(model_path)
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
+
 if not cap.isOpened():
     print("Erro: não foi possível acessar a webcam")
     exit()
@@ -13,6 +14,9 @@ while True:
     ret, frame = cap.read()
     if not ret:
         break
+
+    # Corrige espelhamento da webcam
+    frame = cv2.flip(frame, 1)
 
     # Predição mais rápida
     for result in model(frame, stream=True):
